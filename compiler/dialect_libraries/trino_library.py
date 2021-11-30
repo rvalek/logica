@@ -35,4 +35,12 @@ ArgMinK(a, l) = SqlExpr(
 Array(a) = SqlExpr(
   "ARRAY_AGG({value} order by {arg})",
   {arg: a.arg, value: a.value});
+
+RMatch(s, p) = SqlExpr(
+  "REGEXP_LIKE({s}, {p})",
+  {s: s, p: p});
+
+RExtract(s, p, g) = SqlExpr(
+  "REGEXP_EXTRACT({s}, {p}, {g})",
+  {s: s, p: p, g: g});
 """

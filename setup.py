@@ -1,17 +1,12 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='logica',
     version='1.3.141',
-    author='PolicyEngine team',
+    author='Logica team',
     author_email='',
     url='',
     description='logica',
-    packages=['logica'],
+    packages=find_packages(include=['logica', 'logica.*']),
     python_requires='>=3.6',
-    install_requires=[
-        'jedi',
-        'IPython',
-        'numpy'
-    ],
 )

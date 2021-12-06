@@ -330,7 +330,7 @@ class Snowflake(Dialect):
         }
 
     def Subscript(self, record, subscript):
-        return '%s.%s' % (record, subscript)
+        return '%s:%s' % (record, subscript)
 
     # def LibraryProgram(self):
     #     return trino_library.library
@@ -343,9 +343,6 @@ class Snowflake(Dialect):
 
     def GroupBySpecBy(self):
         return 'index'
-
-    def Subscript(self, record, subscript):
-        return '%s:%s' % (record, subscript)
 
     def DecorateCombineRule(self, rule, var):
         return rule
